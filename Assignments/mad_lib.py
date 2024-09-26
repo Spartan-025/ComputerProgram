@@ -1,3 +1,6 @@
+# Ask for a name then item, verb, another verb, a person, place, vehicle, animal and lastly a object
+#Print out the completed story
+
 print ("Give me a name.")
 name1 = input ("")
 print ("Give me a item.")
