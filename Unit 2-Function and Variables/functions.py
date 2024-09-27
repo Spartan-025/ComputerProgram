@@ -1,5 +1,48 @@
-def greet():
-    print("Welcom Spartan-025")
 
-print("catdog")
+def add(x, y):
+    print(x + y)
 
+
+print("what do you want for your numbers?")
+num_1 = int(input(""))
+num_2 = int(input(""))
+
+
+
+print("What are your top five movies?")
+
+movie_1 = input("What is your first\n")
+movie_2 = input("What is your second?\n")
+movie_3 = input("What is your third\n")
+movie_4 = input("What is your fourth?\n")
+movie_5 = input("What is your fith?\n")
+
+
+def your_movies():
+    print("1. " + movie_1)
+    print("2. " + movie_2)
+    print("3. " + movie_3)
+    print("4. " + movie_4)
+    print("5. " + movie_5)
+
+print("Here are your top five movies!")
+your_movies()
+
+x = 4
+def my_function():
+    global x    #From now on, when I call x, I'm talking about the global version!! Not the local verison...
+    x = 5       #Reassigning the global variable x
+    print(x)    #Prints 5
+
+print(x)  
+my_function()
+print(x)
+
+
+print("What is your item?")
+item = input("")
+print("How much is it")
+price = float(input(""))
+rate = float(6.875)
+
+print(price * rate)
