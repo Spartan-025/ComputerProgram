@@ -42,7 +42,8 @@ print(x)
 print("What is your item?")
 item = input("")
 print("How much is it")
-price = float(input(""))
+price = float(input())
 rate = float(6.875)
 
-print(price * rate)
+print("Your amount is $" + 
+      price * rate)
