@@ -2,7 +2,7 @@ print("This is your simple calculator that can")
 print("add, subtract, multiply and divide any numbers you want!")
 print(" ")
 
-def add():
+def add():                                                       # Adding the numbers the user gives
     print("Add two numbers:")
     x = int(input("What is the first number?\n"))
     y = int(input("what is the second number?\n"))
@@ -10,7 +10,7 @@ def add():
 
 add()
 
-def subtract():
+def subtract():                                                  # Subtracting the numbers the user gives
     print("Subtract two numbers:")
     x = int(input("What is the first number?\n"))
     y = int(input("what is the second number?\n"))
@@ -18,7 +18,7 @@ def subtract():
 
 subtract()
 
-def multiply():
+def multiply():                                                  # Multiplying the numbers the user gives
     print("Multiply two numbers:")
     x = int(input("What is the first number?\n"))
     y = int(input("what is the second number?\n"))
@@ -26,7 +26,7 @@ def multiply():
 
 multiply()
 
-def divide():
+def divide():                                                  # Dividing the numbers the user gives
     print("Divide two numbers:")
     x = int(input("What is the first number?\n"))
     y = int(input("what is the second number?\n"))
