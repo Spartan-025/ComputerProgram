@@ -3,10 +3,6 @@ def add(x, y):
     print(x + y)
 
 
-print("what do you want for your numbers?")
-num_1 = int(input(""))
-num_2 = int(input(""))
-
 
 
 print("What are your top five movies?")
@@ -42,8 +38,10 @@ print(x)
 print("What is your item?")
 item = input("")
 print("How much is it")
-price = float(input())
-rate = float(6.875)
+price = float(input(""))
+rate = float(.06875)
 
-print("Your amount is $" + 
-      price * rate)
+new_price = (price * rate)
+full_price = (new_price + price)
+print("Your amount is $")
+print(full_price)
