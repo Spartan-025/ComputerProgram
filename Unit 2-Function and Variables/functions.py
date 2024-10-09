@@ -45,3 +45,27 @@ new_price = (price * rate)
 full_price = (new_price + price)
 print("Your amount is $")
 print(full_price)
+
+
+if x > 0:
+    print("x is a positive number")
+
+else:
+    print("x is a negitive number")
+
+
+
+color = input("What color is the light?")
+
+if color.lower() == "green":
+    print("Go")
+
+elif color.lower() == "yellow":
+    print("Stop if you can")
+
+elif color.lower() == "red":
+    print("STOP")
+
+else:
+    print("Call Police")
+
