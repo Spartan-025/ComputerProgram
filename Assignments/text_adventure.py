@@ -77,20 +77,70 @@ def day2_outside_dp():
         day2_the_town()
     elif where_going_from_outside_dp == "2":
         print("You are going around the town to the front lines.")
+        day2_march_north()
+    else:
+        print("Decide using 1 or 2")
+        day2_outside_dp()
 def day2_march_north():
-    print("You decided to march North with your battalion.\n21:42, you have been marching all day and the solders want to stop for the night.")
+    print("You decided to march North with your battalion, avaoiding the town.\n21:42, you have been marching all day and the solders want to stop for the night.")
     print("1. Make camp and stay the night\n2. Keep marching")
+#If you full on assault you have a 20% of surviving, if you survive you get captured. 
+#If you split you have a 45% chance of living and taking over the base, otherwise you can run away. 
 def day2_go_to_axis_artillery_base():
     print("11:25, you are almost to the Axis base.\nYou have came up with 2 plans to attack.")
     print("1. Go all in with a frontal assault\n2. Split into 2 teams and attack from the North and South.")
     axis_artillery_assault = input("> ")
     if axis_artillery_assault == "1":
-        print("11:53, you see the Axis forces.")
+        print("11:53, you see the Axis forces.\n12:07, the assault begins, you order your troops to open fire. The sound of gunfire floods your ears.")
+        print("13:48, you are out gunned and out numbered. You have lost over half of your battalion.")
+        print("But the rest of your troops stand strong.")
+        import random 
+        r = random.random()
+        if r < 0.20:
+            print("15:18, the Axis forces used up almost all their resorces at the begining.")
+            print("Your forces stormed and claimed the base. All Axis forces have eather retreated or been taken out.")
+            day2_control_base()
+        else:
+            print("16:27, there is only a few of you left. Ammo is depleated and you are just laying on the ground.")
+            print("Your attack failed, almost all the solders that followed you are dead.")
+            print("The Axis solders have surrounded you, a group walks up to you and grab you. You have been captured by the Axis forces.\nGAME OVER")
+#You have been captured by the Axis, another way the game ends.
+
     elif axis_artillery_assault == "2":
-        print("")
+        print("11:53, you are approching the Axis base, you split your battalion into 2 groups. You are going with the 1st grou, assaulting from the south.")
+        print("12:34, the other team radios you, they are waiting for the order to attack.\n12:35, the attack has started.")
+        import random
+        r = random.random()
+        if r < 0.45:
+            print("14:41, you have pinched the base, the 2nd group has started to invade inside the base.")
+            print("Your forces stormed and claimed the base. All Axis forces have eather retreated or been taken out.")
+            day2_control_base()
+        else:
+            print("15:54, you barly hear any gunfire from the North.")
+            print("The last radio transmission you got from the 2nd group was 40 minnutes ago, they said they were having a hard time holding the Axis back.")
+            print("The Axis are pushing you, there is only one thing you can do. You get what is left of your battalion to retreat.")
+            print("17:24, you ran from the Axis, helicopters are picking you up to bring you back home.\nGAME OVER")
     else:
         print("Decide by using 1 or 2")
         day2_go_to_axis_artillery_base()
+
+def day2_control_base():
+    print("You decide it is best to stay the night at the base.")
+    print("6:02, you are getting up your battalion. You have orders to stay at the base until renforcments arrives.")
+    print("1. Stay at the base\n2. Take a small team to keep going\n3. Move the entire battalion North to join the front lines.")
+    decide_at_the_base = input("> ")
+    if decide_at_the_base == "1":
+        print("You decide to follow orders and keep the base secure.")
+        print("It has been a few days, renforcments finaly arive. The battle is almost to an end.")
+        print("Your battalion has been instructed to stay at the base for the remander of the war.\nGAME OVER")
+    elif decide_at_the_base == "2":
+        print("")
+    elif decide_at_the_base == "3":
+        print("")
+    else:
+        print("Decide using 1, 2 or 3")
+        day2_control_base()
+    
 def day2_the_town():
     print("You are headed to the town.\n9:13, you are entering the town, it looks deserted.")
     print("You are walking down the road and suddenly you see 2 Axis solders walk around the corner.")
