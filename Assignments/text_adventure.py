@@ -5,7 +5,7 @@ def start_of_the_adventure():
     print("DAY 1: DAY BEFORE THE MISSION")
 start_of_the_adventure()
 #The first choice, deciding to go or not
-def day1_the_decision():
+def day1_the_decision():#Encounter num 1
     print("You have been in the 17th Airborne Division for 2 years.")
     print("You have been waiting to be deployed and the time finaly arrived.")
     print("The mission, if you decide to go on, would soon be known as\nDead Man's Ridge.")
@@ -21,10 +21,10 @@ def day1_the_decision():
 def go_on_mission():
     print("You have decided to go, you start flying out tonight.")
     day2_the_jump()
-def dont_go():
+def dont_go():#Arrested 1st way for game to end
     print("You were arrested for insubordination.\nGAME OVER")
 #The second choice, leads to if you jump early, you could live, if you stay for longer you have a chance of get shot down.
-def day2_the_jump():
+def day2_the_jump():#2nd encounter
     print("DAY 2: THE JUMP\nJannuary 4th, 1945, it is 8:00. The drop time is 8:15.")
     print("You are almost to the drop point, nerves are getting to you. you have done over 100 drops, but this one feels diffrent.")
     print("8:15, the pilot says he wants to go a little further before the jump, but you where told to stay on the mission.")
@@ -68,7 +68,7 @@ def day2_boots_down():
         print("Decide using 1,2 or 3")
         day2_boots_down()
 #If you surrvive the plane you are here, another encounter
-def day2_outside_dp():
+def day2_outside_dp():#4th encounter
     print("You landed East of the drop point by 5 miles. There is a town just North of you position.")
     print("1. Go to the town\n2. Go around the town to the front lines")
     where_going_from_outside_dp = input("> ")
@@ -81,12 +81,19 @@ def day2_outside_dp():
     else:
         print("Decide using 1 or 2")
         day2_outside_dp()
-def day2_march_north():
+def day2_march_north():#5th encounter 
     print("You decided to march North with your battalion, avaoiding the town.\n21:42, you have been marching all day and the solders want to stop for the night.")
     print("1. Make camp and stay the night\n2. Keep marching")
+    camp_or_not = input("> ")
+    if camp_or_not == "1":
+        print("")
+    elif camp_or_not == "2":
+        print("")
+    else:
+        print("Decide using 1 or 2")
 #If you full on assault you have a 20% of surviving, if you survive you get captured. 
 #If you split you have a 45% chance of living and taking over the base, otherwise you can run away. 
-def day2_go_to_axis_artillery_base():
+def day2_go_to_axis_artillery_base():#6th encounter
     print("11:25, you are almost to the Axis base.\nYou have came up with 2 plans to attack.")
     print("1. Go all in with a frontal assault\n2. Split into 2 teams and attack from the North and South.")
     axis_artillery_assault = input("> ")
@@ -124,8 +131,9 @@ def day2_go_to_axis_artillery_base():
         print("Decide by using 1 or 2")
         day2_go_to_axis_artillery_base()
 
-def day2_control_base():
+def day3_control_base():#7th encounter
     print("You decide it is best to stay the night at the base.")
+    print("DAY 3: AT THE BASE")
     print("6:02, you are getting up your battalion. You have orders to stay at the base until renforcments arrives.")
     print("1. Stay at the base\n2. Take a small team to keep going\n3. Move the entire battalion North to join the front lines.")
     decide_at_the_base = input("> ")
@@ -134,14 +142,18 @@ def day2_control_base():
         print("It has been a few days, renforcments finaly arive. The battle is almost to an end.")
         print("Your battalion has been instructed to stay at the base for the remander of the war.\nGAME OVER")
     elif decide_at_the_base == "2":
-        print("")
+        print("You take a team of 25 other solders to go, but where are you going?")
+        day3_where_to_go_from_base()
     elif decide_at_the_base == "3":
         print("")
     else:
         print("Decide using 1, 2 or 3")
-        day2_control_base()
+        day3_control_base()
+
+def day3_where_to_go_from_base():
+    print("")
     
-def day2_the_town():
+def day2_the_town():#8th encounter
     print("You are headed to the town.\n9:13, you are entering the town, it looks deserted.")
     print("You are walking down the road and suddenly you see 2 Axis solders walk around the corner.")
     print("1. Do you open fire at them\n2. Do you tell your squad to hide")
@@ -151,8 +163,44 @@ def day2_the_town():
         day2_town_battle()
     elif the_2_solders == "2":
         print("Your squad hid behind the corner of a building, you see the solders walk away from you.")
+        day2_follow_solders()
+    else:
+        print("Decide using 1 or 2")
+        day2_the_town()
 
-def day2_town_battle():
+def day2_follow_solders():#9th encounter
+    print("1. Do you take a small group to follow them\n2. Do you let them walk away from you")
+    go_after = input("> ")
+    if go_after == "1":
+        print("You take a small group to go after them.")
+        day2_trailing_the_solders()
+    elif go_after == "2":
+        print("You let them go.")
+        day2_ambush_by_axis()
+    else:
+        print("Decide using 1 or 2")
+        day2_follow_solders()
+
+def day2_trailing_the_solders():#10 encounter 
+    print("9:24, you have been following the solders throughout the town with a team of 7 others.")
+    print("You here a lot of talking, the solders walk into what looks like a town center. There are more solders outside.")
+    print("1. Are you going to attack the 5 solders outside\n2. Are you going to return to the rest of your battalion")
+    town_center=input("> ")
+    if town_center == "1":
+        print("You attacked to solders, 1 of your guys got shot it the leg.")
+        print("Suddenly the whole courtyard is full of Axis solders. Gunfire is everywhere.\nYou got shot in the chest a few times.\nGAME OVER")
+    elif town_center == "2":
+        print("You walk back to your battalion and you feel like someone is looking at you so you turn around.")
+        print("There are 4 Axis solders in the street, they are lifting their guns up. You lift yours up")
+        day2_town_battle()
+    else:
+        print("You have to decide using 1 or 2")
+        day2_trailing_the_solders()
+
+def day2_ambush_by_axis():#11th encounter
+    print("")
+
+def day2_town_battle():#12th encounter
     print("9:37, it is silent. The Axis solders bodies are laying in the middle of the road")
     print("You hear people running, the sound of magazines clanking and helmets hitting against weapons.")
     print("Suddenly you see 40 or more Axis solders running down the road")
@@ -162,9 +210,9 @@ def day2_town_battle():
     print("1. Do you stay in the building until the morning\n2. Do you go out and keep serching the town")
     day2_in_the_building = input("> ")
     if day2_in_the_building == "1":
-        print("")
+        print("You decided to stay in the building, you are exausted so you wait until the morning to decide what to do next.")
     elif day2_in_the_building == "2":
-        print("")
+        print("You decided to go out and look around the town.")
     else:
         print("Decide using 1 or 2")
         day2_town_battle()
