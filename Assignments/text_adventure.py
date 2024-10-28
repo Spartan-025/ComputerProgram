@@ -41,14 +41,14 @@ def jump_now():
     print("8:23, you and your team have just landed and are packing up your parachutes")
     day2_boots_down()
 def wait_to_jump():
-    print("8:23, you here flack and AA guns shooting. Gun fire lights up the sky all around you.")
+    print("8:23, you here flack and AA guns shooting. Gunfire lights up the sky all around you.")
     import random 
     r = random.random()
     if r < 0.50:
         print("The wing of the plane has been cliped, you and your team need to jump now.")
         day2_outside_dp()
     else:
-        print("The plane was shot down and crashed.\nGAME OVER")
+        print("The plane was shot down and crashed.\nGAME OVER")#second way the game can end
 #The 3rd encounter, deciding where to go.
 def day2_boots_down():
     print("You and your team landed in the drop zone. The plan is to move to the North and push up to the front lines.")
@@ -86,11 +86,41 @@ def day2_march_north():#5th encounter
     print("1. Make camp and stay the night\n2. Keep marching")
     camp_or_not = input("> ")
     if camp_or_not == "1":
-        print("")
+        print("You make camp on the cold winter plains.\n22:16, you can't feel you hands or feet. You can't move at all.")
+        print("You died from hypothermia.\nGAME OVER")
     elif camp_or_not == "2":
+        print("19:52, you keep marching and come up on a forest. Your battalion is exhausted so you decide to spend the night.")
+        day2_stay_night()
+    else:
+        print("Decide using 1 or 2")
+        day2_march_north()
+
+def day2_stay_night(): #14th encounter
+    print("1. Make camp in the forest\n2. Make camp on the icy plains")
+    stay_the_night = input("> ")
+    if stay_the_night == "1":
+        print("You made camp in the forest.")
+        day3_the_trees()
+    elif stay_the_night == "2":
+        print("You make camp on the cold winter plains.\n23:57, you can't feel you hands or feet. You can't move at all.")
+        print("You died from hypothermia.\nGAME OVER")
+    else:
+        print("Decide using 1 or 2")
+        day2_stay_night()
+
+def day3_the_trees():#17th encounter
+    print("DAY 3: THE TREES\nJannuary 5th, 1945, it is 6:08")
+    print("You get your battalion up. You look out to the planes and see footprints, but they are diffrent from the standered issue boots that your battalion have")
+    print("1. Follow the footprints\n2. Go back to your battalion")
+    footprints = input("> ")
+    if footprints == "1":
+        print("")
+    elif footprints == "2":
         print("")
     else:
         print("Decide using 1 or 2")
+        day3_the_trees()
+
 #If you full on assault you have a 20% of surviving, if you survive you get captured. 
 #If you split you have a 45% chance of living and taking over the base, otherwise you can run away. 
 def day2_go_to_axis_artillery_base():#6th encounter
@@ -106,7 +136,7 @@ def day2_go_to_axis_artillery_base():#6th encounter
         if r < 0.20:
             print("15:18, the Axis forces used up almost all their resorces at the begining.")
             print("Your forces stormed and claimed the base. All Axis forces have eather retreated or been taken out.")
-            day2_control_base()
+            day3_control_base()
         else:
             print("16:27, there is only a few of you left. Ammo is depleated and you are just laying on the ground.")
             print("Your attack failed, almost all the solders that followed you are dead.")
@@ -121,7 +151,7 @@ def day2_go_to_axis_artillery_base():#6th encounter
         if r < 0.45:
             print("14:41, you have pinched the base, the 2nd group has started to invade inside the base.")
             print("Your forces stormed and claimed the base. All Axis forces have eather retreated or been taken out.")
-            day2_control_base()
+            day3_control_base()
         else:
             print("15:54, you barly hear any gunfire from the North.")
             print("The last radio transmission you got from the 2nd group was 40 minnutes ago, they said they were having a hard time holding the Axis back.")
@@ -150,8 +180,16 @@ def day3_control_base():#7th encounter
         print("Decide using 1, 2 or 3")
         day3_control_base()
 
-def day3_where_to_go_from_base():
-    print("")
+def day3_where_to_go_from_base():#15th encounter
+    print("1.You can go North to the front lines\n2. You can go North-East to the town")
+    base_where_go = input("> ")
+    if base_where_go == "1":
+        print("")
+    elif base_where_go == "2":
+        print("")
+    else:
+        print("Decide using 1 or 2")
+        day3_where_to_go_from_base()
     
 def day2_the_town():#8th encounter
     print("You are headed to the town.\n9:13, you are entering the town, it looks deserted.")
@@ -198,7 +236,31 @@ def day2_trailing_the_solders():#10 encounter
         day2_trailing_the_solders()
 
 def day2_ambush_by_axis():#11th encounter
-    print("")
+    print("It has been a few hours, suddenly you see 40 or more Axis solders running at you. Bullets from both sides start flying.")
+    print("1. Keep fighting\n2. Run away and call for backup")
+    town_ambush = input("> ")
+    if town_ambush == "1":
+        print("The Axis solders have surrounded you. They are closing in and you have lost a lot of soldiers.")
+        print("You have been shot in the neck.\nGAME OVER")
+    elif town_ambush == "2":
+        print("You have ran with a few soldiers.")
+        day2_go_back()
+    else:
+        print("Decide using 1 or 2")
+def day2_go_back():#16th encounter
+    print("You left most of your troops behind, are your really going to leave them?")
+    print("1. Go back\n2. keep going")
+    troops_left_behind = input("> ")
+    if troops_left_behind == "1":
+        print("You go back, your troops are surronded and are getting shot down. Axis solders see you running tward them.")
+        print("You were gunned down by the Axis solders\nGAME OVER")
+    elif troops_left_behind == "2":
+        print("You start to run from the Axis, suddenly you get shot in the leg.")
+        print("A Axis sniper is aming at you, they lock and load another round... BANG!\nGAME OVER")
+    else:
+        print("Decide using 1 or 2")
+
+
 
 def day2_town_battle():#12th encounter
     print("9:37, it is silent. The Axis solders bodies are laying in the middle of the road")
@@ -211,11 +273,16 @@ def day2_town_battle():#12th encounter
     day2_in_the_building = input("> ")
     if day2_in_the_building == "1":
         print("You decided to stay in the building, you are exausted so you wait until the morning to decide what to do next.")
+        day3_in_the_building()
     elif day2_in_the_building == "2":
         print("You decided to go out and look around the town.")
     else:
         print("Decide using 1 or 2")
         day2_town_battle()
+
+def day3_in_the_building():#13th encounter
+    print("DAY 3: IN THE BUILDING \nJannuary 5th, 1945, it is 5:43.")
+    print("You heard gunshots from the North. You have been orderd to go North to the front lines. \n1. Do you go to the gunshots\n2. Do you go around them")
 
 
 day1_the_decision()
