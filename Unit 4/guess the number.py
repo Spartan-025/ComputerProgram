@@ -10,6 +10,7 @@ while real_num != enter_num:
     attempt = attempt + 1 
     if int(enter_num) == real_num:
         print ("You found the number")
+        break
         done()
     elif int(enter_num) > real_num:
         print("You are too high")
